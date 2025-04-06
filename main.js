@@ -3,31 +3,30 @@ var $ = el => document.querySelector(el)
 var $$ = el => document.querySelectorAll(el)
 
 
-
-class Tabla{
-    constructor(title){
+class Tabla {
+    constructor(title) {
         this.title = title
     }
 
 }
 
 
-class TablaCualitativa extends Tabla{
+class TablaCualitativa extends Tabla {
 
-    constructor(title){
+    constructor(title) {
         super(title)
         this.v = {}
     }
-    
-    saveData(val){
-        if(this.v[val] == null){
+
+    saveData(val) {
+        if (this.v[val] == null) {
             this.v[val] = 1
-        } else{
+        } else {
             this.v[val] = this.v[val] + 1
         }
     }
 
-    show(){
+    show() {
         let header = `<tr>
                         <th>x</th>
                         <th>f</th>
@@ -35,27 +34,36 @@ class TablaCualitativa extends Tabla{
                         <th>fr</th>
                         <th>Fr</th>
                     </tr>`
-        for(var i in this.v){
+        let F = 0
+        for (var i in this.v) {
             console.log(this.v[i])
+            let a = `<tr>
+                        <th>${i}</th>
+                        <th>${this.v[i]}</th>
+                        <th>${F + this.v[i]}</th>
+                        <th>fr</th>
+                        <th>Fr</th>
+                    </tr>`
+            F = this.v[i]
+            console.log(a)
         }
     }
-
 }
 
 var tabla
 tabla = new TablaCualitativa("Prueba")
 
-function save(){
+function save() {
     let val = $("#valor")
-    if(val.value == ""){
+    if (val.value == "") {
         alert("Ingrese un valor porfavor")
-    } else{
+    } else {
         tabla.saveData(val.value)
     }
     console.log(tabla)
 }
 
-function ola(){
+function ola() {
     tabla.show()
 }
 a = $(".save")
