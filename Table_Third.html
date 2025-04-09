@@ -15,6 +15,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="input_value.css">
     <link rel="stylesheet" href="Table_Third.css">
 </head>
 <body>
@@ -49,12 +50,14 @@
           </ul>
         </nav>
       </header>
-    <h1>Tabla de Frecuencia Para Datos Agrupados En Intervalos</h1>
+    <h1>Tabla datos cualitativos</h1>
     <div>
         <label for="">Ingrese un valor</label>
         <input type="text" name="valor" id="valor">
         <input type="button" value="enviar" class="save">
         <input type="button" value="probar" class="ola">
+        <br>
+        <button onclick="exportarExcel()">📊 Exportar a Excel</button>
     </div>
     <div class="tabla-contenedor">
         <table>
@@ -69,37 +72,18 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>Dato1</td>
-                    <td>Dato1</td>
-                    <td>Dato1</td>
-                    <td>Dato1</td>
-                    <td>Dato1</td>
                 </tr>
                 <tr>
-                    <td>Dato2</td>
-                    <td>Dato2</td>
-                    <td>Dato2</td>
-                    <td>Dato2</td>
-                    <td>Dato2</td>
                 </tr>
                 <tr>
-                    <td>Dato3</td>
-                    <td>Dato3</td>
-                    <td>Dato3</td>
-                    <td>Dato3</td>
-                    <td>Dato4</td>
                 </tr>
                 <tr>
-                    <td>Σ</td>
-                    <td>Dato1</td>
-                    <td>Dato1</td>
-                    <td>Dato1</td>
-                    <td>Dato1</td>
                 </tr>
             </tbody>
         </table>
     </div>
-    <script src="main.js"></script>
+    <script src="qualitative_table.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
     <script src="https://animatedicons.co/scripts/embed-animated-icons.js"></script>
 </body>
 </html>
